@@ -18,6 +18,10 @@ function divide(x, y) {
 function operate(operator, x, y) {
     return operator(x, y);
 }
+/* Helpers*/
+function roundToTwo(num) {
+    return +(Math.round(num + "e+2")  + "e-2");
+}
 
 /* Getters and setters of HTML*/
 function getNumberOfDisplay() {
@@ -82,6 +86,11 @@ function connectEqualsToDisplay() {
     equalsButton.addEventListener('click', completeOperation);
 }
 
+function connectClearToDisplay() {
+    const equalsButton = document.getElementById('clear');
+    equalsButton.addEventListener('click', clearCalculator);
+}
+
 /* Events triggered by buttons */
 function placeNumberInDisplay(content) {
     if (isDisplayAResult() || isCalculatorClear()) {
@@ -111,15 +120,28 @@ function executeOperation(operatorName) {
 function completeOperation() {
     const leftOperandElement = document.getElementById('left-operand');
     const operatorElement = document.getElementById('operator');
+    if (!existsAnStartedCalculation()) {
+        return;
+    }
     // Get values
     let leftOperand = Number(leftOperandElement.innerText);
     let operator = getOperator(operatorElement.innerText);
     let rightOperand = getNumberOfDisplay();
     // Calculate and display
     let result = operate(operator, leftOperand, rightOperand);
-    setInDisplayAsResult(result);
+    // Handle errors
+    if (!isFinite(result)) {
+        alert("Try not to divide by zero, okay?");
+        return;
+    }
+    setInDisplayAsResult(roundToTwo(result));
     // Clear previous calculation
     clearPreviousCalculations();
+}
+
+function clearCalculator() {
+    clearPreviousCalculations();
+    setInDisplay("0");
 }
 
 /* Parser */
@@ -142,6 +164,7 @@ function getOperator(operatorName) {
 connectNumberButtonsToDisplay();
 connectOperatorsToDisplay();
 connectEqualsToDisplay();
+connectClearToDisplay();
 // Accesors
 // const displayBoard = document.getElementById('display');
 // const numberButtons = document.querySelectorAll('[data-number]');

@@ -30,4 +30,11 @@ Scenario: 4 - Operator after equals should use result as left operand
     And press equals
     And enter an operator "+"
     Then it should display "35"
+
+Scenario: 5 - Rounds up to two decimals
+    When enter value "1"
+    And enter an operator "*"
+    And enter value "3"
+    And press equals
+    Then it should display "0.33"
 ```
