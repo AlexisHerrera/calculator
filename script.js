@@ -55,11 +55,13 @@ function getOperator(operatorName) {
 
 function startOperation(operatorName) {
     // Save base operand
-    const displayBoard = document.getElementById('display');
-    displayBoard.dataset.leftOperand = getNumberOfDisplay();
+    const leftOperandElement = document.getElementById('left-operand');
+    leftOperandElement.value =  getNumberOfDisplay();
     // Save operator
-    displayBoard.dataset.operator = operatorName;
-    // Clear -- FOR NOW -- 
+    const operatorElement = document.getElementById('operator');
+    operatorElement.value = operatorName;
+    // Clear -- FOR NOW --
+    const displayBoard = document.getElementById('display');
     displayBoard.innerText = "";
 }
 
@@ -78,9 +80,11 @@ function getNumberOfDisplay() {
 
 function completeOperation() {
     const displayBoard = document.getElementById('display');
+    const leftOperandElement = document.getElementById('left-operand');
+    const operatorElement = document.getElementById('operator');
     // Get values
-    let leftOperand = Number(displayBoard.dataset.leftOperand);
-    let operator = getOperator(displayBoard.dataset.operator);
+    let leftOperand = Number(leftOperandElement.value);
+    let operator = getOperator(operatorElement.value);
     let rightOperand = getNumberOfDisplay();
     // Calculate and display
     let result = operate(operator, leftOperand, rightOperand);
