@@ -24,9 +24,6 @@ function placeNumberInDisplay(content) {
     const displayBoard = document.getElementById('display');
     displayBoard.innerText += content;
 }
-// Accesors
-// const displayBoard = document.getElementById('display');
-// const numberButtons = document.querySelectorAll('[data-number]');
 
 function connectButtonsToDisplay() {
     const numberButtons = document.querySelectorAll('[data-number]');
@@ -49,11 +46,18 @@ function getOperator(operatorName) {
             return null;
       }
 }
-// // First get operator
-// let operator = getOperator(operatorName);
-// if (!operator) return null;
 
-function startOperation(operatorName) {
+function existsAnStartedCalculation() {
+    const leftOperandElement = document.getElementById('left-operand');
+    const operatorElement = document.getElementById('operator');
+    return leftOperandElement.innerText !== "" && operatorElement.innerText !== "";
+}
+
+function executeOperation(operatorName) {
+    if (existsAnStartedCalculation()) {
+        completeOperation();
+    }
+
     // Save base operand
     const leftOperandElement = document.getElementById('left-operand');
     leftOperandElement.innerText = getNumberOfDisplay();
@@ -68,7 +72,7 @@ function startOperation(operatorName) {
 function connectOperatorsToDisplay() {
     const operatorsButtons = Array.from(document.getElementById('operators').getElementsByTagName('button'));
     operatorsButtons.forEach(button =>
-        button.addEventListener('click',() => startOperation(button.id))
+        button.addEventListener('click',() => executeOperation(button.id))
          );
 }
 
@@ -99,3 +103,8 @@ function connectEqualsToDisplay() {
 connectButtonsToDisplay();
 connectOperatorsToDisplay();
 connectEqualsToDisplay();
+
+// Accesors
+// const displayBoard = document.getElementById('display');
+// const numberButtons = document.querySelectorAll('[data-number]');
+
