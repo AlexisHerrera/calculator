@@ -56,10 +56,10 @@ function getOperator(operatorName) {
 function startOperation(operatorName) {
     // Save base operand
     const leftOperandElement = document.getElementById('left-operand');
-    leftOperandElement.value =  getNumberOfDisplay();
+    leftOperandElement.innerText = getNumberOfDisplay();
     // Save operator
     const operatorElement = document.getElementById('operator');
-    operatorElement.value = operatorName;
+    operatorElement.innerText = operatorName;
     // Clear -- FOR NOW --
     const displayBoard = document.getElementById('display');
     displayBoard.innerText = "";
@@ -83,8 +83,8 @@ function completeOperation() {
     const leftOperandElement = document.getElementById('left-operand');
     const operatorElement = document.getElementById('operator');
     // Get values
-    let leftOperand = Number(leftOperandElement.value);
-    let operator = getOperator(operatorElement.value);
+    let leftOperand = Number(leftOperandElement.innerText);
+    let operator = getOperator(operatorElement.innerText);
     let rightOperand = getNumberOfDisplay();
     // Calculate and display
     let result = operate(operator, leftOperand, rightOperand);
