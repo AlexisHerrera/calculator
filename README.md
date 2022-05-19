@@ -37,4 +37,13 @@ Scenario: 5 - Rounds up to two decimals
     And enter value "3"
     And press equals
     Then it should display "0.33"
+
+Scenario: 6 - Change operator
+    When enter value "7"
+    And enter an operator "*"
+    And enter an operator "+"
+    And enter value "5"
+    And press equals
+    Then it should display "12"
+
 ```

@@ -102,16 +102,21 @@ function placeNumberInDisplay(content) {
 }
 
 function executeOperation(operatorName) {
+    const leftOperandElement = document.getElementById('left-operand');
+    const operatorElement = document.getElementById('operator');
     if (existsAnStartedCalculation()) {
+        if (isDisplayAResult()) {
+            // Only changes operator
+            operatorElement.innerText = operatorName;
+            return;
+        }
         // Should chain previous operation
         // e.g : "10 * 5 +" => 50
         completeOperation();
     }
     // Save left operand
-    const leftOperandElement = document.getElementById('left-operand');
     leftOperandElement.innerText = getNumberOfDisplay();
     // Save operator
-    const operatorElement = document.getElementById('operator');
     operatorElement.innerText = operatorName;
     // Display left operand and set it to "result"
     setInDisplayAsResult(getNumberOfDisplay());
