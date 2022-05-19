@@ -87,6 +87,10 @@ function placeNumberInDisplay(content) {
 }
 
 function executeOperation(operatorName) {
+    // Should chain previous operation
+    if (existsAnStartedCalculation()) {
+        completeOperation();
+    }
     // Save left operand
     const leftOperandElement = document.getElementById('left-operand');
     leftOperandElement.innerText = getNumberOfDisplay();
