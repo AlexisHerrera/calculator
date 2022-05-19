@@ -28,7 +28,6 @@ function getNumberOfDisplay() {
 function setInDisplay(content) {
     const displayBoard = document.getElementById('display');
     displayBoard.innerText = content;
-    // This is ugly..
     displayBoard.dataset.result = "";
 }
 
@@ -36,6 +35,13 @@ function setInDisplayAsResult(content) {
     setInDisplay(content);
     const displayBoard = document.getElementById('display');
     displayBoard.dataset.result = content;
+}
+
+function clearPreviousCalculations() {
+    const leftOperandElement = document.getElementById('left-operand');
+    const operatorElement = document.getElementById('operator');
+    leftOperandElement.innerText = "";
+    operatorElement.innerText = "";
 }
 
 /* Checkers */
@@ -87,8 +93,9 @@ function placeNumberInDisplay(content) {
 }
 
 function executeOperation(operatorName) {
-    // Should chain previous operation
     if (existsAnStartedCalculation()) {
+        // Should chain previous operation
+        // e.g : "10 * 5 +" => 50
         completeOperation();
     }
     // Save left operand
@@ -101,10 +108,6 @@ function executeOperation(operatorName) {
     setInDisplayAsResult(getNumberOfDisplay());
 }
 
-
-// redefine equals (debe limpiar left operand y operator)
-// el +,*,/,- debe encadenar (lo mismo que ya hace...)
-
 function completeOperation() {
     const leftOperandElement = document.getElementById('left-operand');
     const operatorElement = document.getElementById('operator');
@@ -112,9 +115,11 @@ function completeOperation() {
     let leftOperand = Number(leftOperandElement.innerText);
     let operator = getOperator(operatorElement.innerText);
     let rightOperand = getNumberOfDisplay();
-    // Calculate and display. Set it as result
+    // Calculate and display
     let result = operate(operator, leftOperand, rightOperand);
-    setInDisplay(result);
+    setInDisplayAsResult(result);
+    // Clear previous calculation
+    clearPreviousCalculations();
 }
 
 /* Parser */

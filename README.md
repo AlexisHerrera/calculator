@@ -6,17 +6,28 @@ https://www.theodinproject.com/lessons/foundations-calculator
 
 ```gherkin
 Scenario: 1 - Basic display
-    When start an operation "7 *"
-    Then it should display 7
+    When enter value "7"
+    Then it should display "7"
 
 Scenario: 2 - Display clears when entering a value after operator
-    When start an operation "7 *"
-    And enter another value "5"
-    Then it should display 5
+    When enter value "7"
+    And enter an operator "*"
+    And enter value "5"
+    And press equals
+    Then it should display "35"
 
 Scenario: 3 - String operations
-    When start an operation "7 *"
-    And enter another value "5"
-    When enter an operator "+"
-    Then the previous operation is finished and is shown in display (35)
+    When enter value "7"
+    And enter an operator "*"
+    And enter value "5"
+    And enter an operator "+"
+    Then it should display "35"
+
+Scenario: 4 - Operator after equals should use result as left operand
+    When enter value "7"
+    And enter an operator "*"
+    And enter value "5"
+    And press equals
+    And enter an operator "+"
+    Then it should display "35"
 ```
