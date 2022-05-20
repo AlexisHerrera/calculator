@@ -100,7 +100,15 @@ function connectBackspaceToDisplay() {
     const backspaceButton = document.getElementById('backspace');
     backspaceButton.addEventListener('click', addBackspace);
 }
-/* Events triggered by buttons */
+
+function connectKeyboardToDisplay() {
+    document.addEventListener('keydown', addKeyboard, false);  
+}
+
+/* * * * * * * * * * * * * * * * * * *
+ *    Events triggered by buttons    *
+ * * * * * * * * * * * * * * * * * * *
+*/
 function placeNumberInDisplay(content) {
     if (isDisplayAResult() || isCalculatorClear()) {
         setInDisplay(content);
@@ -177,31 +185,47 @@ function addBackspace() {
     setInDisplay(getValueOfDisplay().slice(0, -1));
 }
 
+function addKeyboard(event) {
+    const key = event.key
+    if (isFinite(key)) {
+        // It's a number
+        placeNumberInDisplay(key);
+    } else if (key === "Backspace") {
+        addBackspace();
+    } else if (key === ".") {
+        addDecimal();
+    } else if (["=","Enter"].includes(key)) {
+        completeOperation();
+    } else if (["+","-","*","/"].includes(key)){
+        executeOperation(key);
+    }
+}
 
 /* Parser */
 function getOperator(operatorName) {
     switch (operatorName) {
-        case 'add':
+        case '+':
             return add;
-        case 'substract':
+        case '-':
             return substract;
-        case 'multiply':
+        case '*':
             return multiply;
-        case 'divide':
+        case '/':
             return divide;
         default:
             return null;
       }
 }
-/* App */
 
+
+/* App */
 connectNumberButtonsToDisplay();
 connectOperatorsToDisplay();
 connectEqualsToDisplay();
 connectClearToDisplay();
 connectDotToDisplay();
 connectBackspaceToDisplay();
+connectKeyboardToDisplay();
 // Accesors
 // const displayBoard = document.getElementById('display');
 // const numberButtons = document.querySelectorAll('[data-number]');
-
