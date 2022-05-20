@@ -5,42 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Calculator</title>
 </head>
 
 <body>
     <h1>Calculator</h1>
-    <div id="calculator">
-        <div id="partial-display">
-            <p>Left operand:</p> <span id="left-operand"></span>
-            <p>Operator:</p><span id="operator"></span>
+    <div id="calculator-wrapper">
+        <div id="calculator">
+            <div id="screen">
+                <div id="partial-display">
+                    <span id="left-operand"></span>
+                    <span id="operator"></span>
+                </div>
+                <div id="display">0</div>
+            </div>
+            <div class="numbers">
+                <!-- This could be made with JS -->
+                <button data-number="0">0</button>
+                <button data-number="1">1</button>
+                <button data-number="2">2</button>
+                <button data-number="3">3</button>
+                <button data-number="4">4</button>
+                <button data-number="5">5</button>
+                <button data-number="6">6</button>
+                <button data-number="7">7</button>
+                <button data-number="8">8</button>
+                <button data-number="9">9</button>
+            </div>
+            <div id="operators">
+                <button id="+">+</button>
+                <button id="-">-</button>
+                <button id="*">*</button>
+                <button id="/">/</button>
+            </div>
+            <button id="equals">=</button>
+            <button id="dot">.</button>
+            <button id="clear">clear</button>
+            <button id="backspace">backspace</button>
         </div>
-        <p>Display:</p><div id="display">0</div>
-        <div class="numbers">
-            <!-- This could be made with JS -->
-            <button data-number="0">0</button>
-            <button data-number="1">1</button>
-            <button data-number="2">2</button>
-            <button data-number="3">3</button>
-            <button data-number="4">4</button>
-            <button data-number="5">5</button>
-            <button data-number="6">6</button>
-            <button data-number="7">7</button>
-            <button data-number="8">8</button>
-            <button data-number="9">9</button>
-        </div>
-        <div id="operators">
-            <button id="+">+</button>
-            <button id="-">-</button>
-            <button id="*">*</button>
-            <button id="/">/</button>
-        </div>
-        <button id="equals">=</button>
-        <button id="dot">.</button>
-        <button id="clear">clear</button>
-        <button id="backspace">backspace</button>
     </div>
-
     <script src="script.js"></script>
 
 </body>

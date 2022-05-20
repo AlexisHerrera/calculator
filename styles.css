@@ -1,0 +1,33 @@
+#calculator-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+#calculator {
+    background-color: darkblue;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1rem;
+}
+
+#screen {
+    background-color: gray;
+    height: 80px;
+    width: 400px;
+    margin-top: 20px;
+    padding: 5px;
+    text-align: right;
+    border-radius: 1rem;
+}
+
+#partial-display {
+    color: orange;
+    font-size: 1.5rem;
+    display:inline-block;
+}
+#display {
+    font-size: 3rem;
+    color: white;
+}

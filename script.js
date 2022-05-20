@@ -20,7 +20,7 @@ function operate(operator, x, y) {
 }
 /* Helpers*/
 function roundToTwo(num) {
-    return +(Math.round(num + "e+2")  + "e-2");
+    return Math.round( num * 100 + Number.EPSILON ) / 100;
 }
 
 /* Getters and setters of HTML*/
