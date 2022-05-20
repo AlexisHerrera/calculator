@@ -24,9 +24,9 @@ function roundToTwo(num) {
 }
 
 /* Getters and setters of HTML*/
-function getNumberOfDisplay() {
+function getValueOfDisplay() {
     const displayBoard = document.getElementById('display');
-    return Number(displayBoard.innerText);
+    return displayBoard.innerText;
 }
 
 function setInDisplay(content) {
@@ -54,7 +54,7 @@ function isDisplayAResult() {
     let result = displayBoard.dataset.result;
     return result !== undefined && result !== "";
 }
-
+// Warning: Why is different than clearCalculator?
 function isCalculatorClear() {
     const displayBoard = document.getElementById('display');
     return displayBoard.innerText == "0";
@@ -91,12 +91,17 @@ function connectClearToDisplay() {
     equalsButton.addEventListener('click', clearCalculator);
 }
 
+function connectDotToDisplay() {
+    const dotButton = document.getElementById('dot');
+    dotButton.addEventListener('click', addDecimal);
+}
+
 /* Events triggered by buttons */
 function placeNumberInDisplay(content) {
     if (isDisplayAResult() || isCalculatorClear()) {
         setInDisplay(content);
     } else {
-        setInDisplay(`${getNumberOfDisplay()}${content}`);
+        setInDisplay(`${getValueOfDisplay()}${content}`);
     }
 
 }
@@ -115,11 +120,11 @@ function executeOperation(operatorName) {
         completeOperation();
     }
     // Save left operand
-    leftOperandElement.innerText = getNumberOfDisplay();
+    leftOperandElement.innerText = getValueOfDisplay();
     // Save operator
     operatorElement.innerText = operatorName;
     // Display left operand and set it to "result"
-    setInDisplayAsResult(getNumberOfDisplay());
+    setInDisplayAsResult(getValueOfDisplay());
 }
 
 function completeOperation() {
@@ -131,7 +136,7 @@ function completeOperation() {
     // Get values
     let leftOperand = Number(leftOperandElement.innerText);
     let operator = getOperator(operatorElement.innerText);
-    let rightOperand = getNumberOfDisplay();
+    let rightOperand = Number(getValueOfDisplay());
     // Calculate and display
     let result = operate(operator, leftOperand, rightOperand);
     // Handle errors
@@ -147,6 +152,17 @@ function completeOperation() {
 function clearCalculator() {
     clearPreviousCalculations();
     setInDisplay("0");
+}
+
+function addDecimal() {
+    if (!isDisplayAResult() && getValueOfDisplay().includes('.')) {
+        return;
+    }
+    if (isDisplayAResult()) {
+        setInDisplay(`${0}.`);
+    } else {
+        setInDisplay(`${getValueOfDisplay()}.`);
+    }
 }
 
 /* Parser */
@@ -170,6 +186,7 @@ connectNumberButtonsToDisplay();
 connectOperatorsToDisplay();
 connectEqualsToDisplay();
 connectClearToDisplay();
+connectDotToDisplay();
 // Accesors
 // const displayBoard = document.getElementById('display');
 // const numberButtons = document.querySelectorAll('[data-number]');

@@ -1,6 +1,7 @@
 # calculator
+App: https://abherrera.gitlab.io/calculator
 
-https://www.theodinproject.com/lessons/foundations-calculator
+Lesson: https://www.theodinproject.com/lessons/foundations-calculator
 
 ## Features
 
@@ -46,4 +47,23 @@ Scenario: 6 - Change operator
     And press equals
     Then it should display "12"
 
+Scenario: 7 - Accepts decimals
+    When enter value "1"
+    And enter "."
+    And enter value "2"
+    Then it should display "1.2"
+
+Scenario: 8 - Should not accept more than 1 decimal just after one
+    When enter value "1"
+    And enter "."
+    And enter "."
+    And enter value "2"
+    Then it should display "1.2"
+
+Scenario: 9 - Should not accept more than 1 decimal in any place
+    When enter value "1"
+    And enter "."
+    And enter value "2"
+    And enter "."
+    Then it should display "1.2"
 ```
