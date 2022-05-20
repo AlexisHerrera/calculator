@@ -66,4 +66,9 @@ Scenario: 9 - Should not accept more than 1 decimal in any place
     And enter value "2"
     And enter "."
     Then it should display "1.2"
+
+Scenario: 10 - Backspace removes last value introduced
+    When enter value "12"
+    And enter "backspace"
+    Then it should display "1"
 ```

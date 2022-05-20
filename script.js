@@ -96,6 +96,10 @@ function connectDotToDisplay() {
     dotButton.addEventListener('click', addDecimal);
 }
 
+function connectBackspaceToDisplay() {
+    const backspaceButton = document.getElementById('backspace');
+    backspaceButton.addEventListener('click', addBackspace);
+}
 /* Events triggered by buttons */
 function placeNumberInDisplay(content) {
     if (isDisplayAResult() || isCalculatorClear()) {
@@ -156,6 +160,7 @@ function clearCalculator() {
 
 function addDecimal() {
     if (!isDisplayAResult() && getValueOfDisplay().includes('.')) {
+        // Adding numbers but it already has a dot
         return;
     }
     if (isDisplayAResult()) {
@@ -164,6 +169,14 @@ function addDecimal() {
         setInDisplay(`${getValueOfDisplay()}.`);
     }
 }
+
+function addBackspace() {
+    if (getValueOfDisplay().length === 0) {
+        return;
+    }
+    setInDisplay(getValueOfDisplay().slice(0, -1));
+}
+
 
 /* Parser */
 function getOperator(operatorName) {
@@ -187,6 +200,7 @@ connectOperatorsToDisplay();
 connectEqualsToDisplay();
 connectClearToDisplay();
 connectDotToDisplay();
+connectBackspaceToDisplay();
 // Accesors
 // const displayBoard = document.getElementById('display');
 // const numberButtons = document.querySelectorAll('[data-number]');
