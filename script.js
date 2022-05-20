@@ -75,7 +75,7 @@ function connectNumberButtonsToDisplay() {
 }
 
 function connectOperatorsToDisplay() {
-    const operatorsButtons = Array.from(document.getElementById('operators').getElementsByTagName('button'));
+    const operatorsButtons = document.querySelectorAll('.operator');
     operatorsButtons.forEach(button =>
         button.addEventListener('click',() => executeOperation(button.id))
          );
