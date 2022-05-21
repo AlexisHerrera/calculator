@@ -33,23 +33,29 @@ h1 {
 
 #screen {
     background-color: rgba(136, 160, 147, 0.699);
-    height: 80px;
+    min-height: 80px;
     width: 400px;
     margin-top: 20px;
     padding: 5px;
     text-align: right;
     border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 #partial-display {
+    min-height: 27px;
     color: rgb(73, 69, 61);
     font-size: 1.5rem;
-    display: inline-block;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 #display {
     font-size: 3rem;
     color: white;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 
