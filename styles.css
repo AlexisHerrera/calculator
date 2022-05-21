@@ -64,9 +64,15 @@ h1 {
 
 .row-buttons {
     display: flex;
-    justify-content: space-between;
+    column-gap: 15px;
 }
-
+/* Fix blank space*/
+#last-row {
+    justify-content: left;
+}
+#equals {
+    width: 250px;
+}
 
 /* Change button background color for AC and DEL to orange*/
 #clear,
