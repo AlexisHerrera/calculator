@@ -1,4 +1,5 @@
-# calculator
+# calculator [![CI](https://github.com/AlexisHerrera/calculator/actions/workflows/ci.yaml/badge.svg)](https://github.com/AlexisHerrera/calculator/actions/workflows/ci.yaml)
+
 App: https://alexisherrera.github.io/calculator
 
 Lesson: https://www.theodinproject.com/lessons/foundations-calculator
