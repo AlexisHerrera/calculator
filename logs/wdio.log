@@ -1,17 +1,17 @@
-2022-05-24T18:09:40.570Z DEBUG @wdio/utils:initialiseServices: initialise service "chromedriver" as NPM package
-2022-05-24T18:09:40.602Z DEBUG @wdio/utils:initialiseServices: initialise service "static-server" as NPM package
-2022-05-24T18:09:40.713Z INFO @wdio/cli:launcher: Run onPrepare hook
-2022-05-24T18:09:40.715Z INFO chromedriver: Start Chromedriver (/home/alexis/Documents/git/odin_project/calculator/node_modules/chromedriver/lib/chromedriver/chromedriver) with args --port=9515 --url-base=/
-2022-05-24T18:09:40.720Z INFO @wdio/static-server-service: Mounting folder `/home/alexis/Documents/git/odin_project/calculator/demo-app` at `/`
-2022-05-24T18:09:40.722Z INFO @wdio/static-server-service: Static server running at http://localhost:8080
-2022-05-24T18:09:40.840Z DEBUG @wdio/cli:utils: Finished to run "onPrepare" hook in 126ms
-2022-05-24T18:09:40.843Z INFO @wdio/cli:launcher: Run onWorkerStart hook
-2022-05-24T18:09:40.843Z DEBUG @wdio/cli:utils: Finished to run "onWorkerStart" hook in 0ms
-2022-05-24T18:09:40.845Z INFO @wdio/local-runner: Start worker 0-0 with arg: run,wdio.BUILD.conf.ts
-2022-05-24T18:09:44.112Z DEBUG @wdio/local-runner: Runner 0-0 finished with exit code 0
-2022-05-24T18:09:44.113Z INFO @wdio/cli:launcher: Run onWorkerEnd hook
-2022-05-24T18:09:44.114Z DEBUG @wdio/cli:utils: Finished to run "onWorkerEnd" hook in 0ms
-2022-05-24T18:09:44.114Z INFO @wdio/cli:launcher: Run onComplete hook
-2022-05-24T18:09:44.114Z DEBUG @wdio/cli:utils: Finished to run "onComplete" hook in 0ms
-2022-05-24T18:09:44.136Z INFO @wdio/local-runner: Shutting down spawned worker
-2022-05-24T18:09:44.387Z INFO @wdio/local-runner: Waiting for 0 to shut down gracefully
+2022-05-24T18:19:41.364Z DEBUG @wdio/utils:initialiseServices: initialise service "chromedriver" as NPM package
+2022-05-24T18:19:42.112Z DEBUG @wdio/utils:initialiseServices: initialise service "static-server" as NPM package
+2022-05-24T18:19:43.880Z INFO @wdio/cli:launcher: Run onPrepare hook
+2022-05-24T18:19:43.919Z INFO chromedriver: Start Chromedriver (/home/alexis/Documents/git/odin_project/calculator/node_modules/chromedriver/lib/chromedriver/chromedriver) with args --port=9515 --url-base=/
+2022-05-24T18:19:43.925Z INFO @wdio/static-server-service: Mounting folder `/home/alexis/Documents/git/odin_project/calculator/app` at `/`
+2022-05-24T18:19:43.928Z INFO @wdio/static-server-service: Static server running at http://localhost:8080
+2022-05-24T18:19:44.473Z DEBUG @wdio/cli:utils: Finished to run "onPrepare" hook in 592ms
+2022-05-24T18:19:44.476Z INFO @wdio/cli:launcher: Run onWorkerStart hook
+2022-05-24T18:19:44.476Z DEBUG @wdio/cli:utils: Finished to run "onWorkerStart" hook in 0ms
+2022-05-24T18:19:44.478Z INFO @wdio/local-runner: Start worker 0-0 with arg: run,wdio.BUILD.conf.ts
+2022-05-24T18:20:20.546Z DEBUG @wdio/local-runner: Runner 0-0 finished with exit code 0
+2022-05-24T18:20:20.547Z INFO @wdio/cli:launcher: Run onWorkerEnd hook
+2022-05-24T18:20:20.548Z DEBUG @wdio/cli:utils: Finished to run "onWorkerEnd" hook in 0ms
+2022-05-24T18:20:20.548Z INFO @wdio/cli:launcher: Run onComplete hook
+2022-05-24T18:20:20.548Z DEBUG @wdio/cli:utils: Finished to run "onComplete" hook in 0ms
+2022-05-24T18:20:20.609Z INFO @wdio/local-runner: Shutting down spawned worker
+2022-05-24T18:20:20.860Z INFO @wdio/local-runner: Waiting for 0 to shut down gracefully

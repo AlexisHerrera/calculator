@@ -30,7 +30,7 @@ buildConfig.services = [
         {
             port: 8080,
             folders: [
-                { mount: '/', path: path.join(__dirname, 'demo-app') },
+                { mount: '/', path: path.join(__dirname, 'app') },
             ],
         },
     ],
