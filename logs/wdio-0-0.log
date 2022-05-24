@@ -1,0 +1,48 @@
+2022-05-24T18:09:41.243Z INFO @wdio/local-runner: Run worker command: run
+2022-05-24T18:09:41.457Z DEBUG @wdio/config:utils: Found 'ts-node' package, auto-compiling TypeScript files
+2022-05-24T18:09:41.611Z DEBUG @wdio/local-runner:utils: init remote session
+2022-05-24T18:09:41.615Z DEBUG @wdio/utils:initialiseServices: initialise service "chromedriver" as NPM package
+2022-05-24T18:09:41.642Z DEBUG @wdio/utils:initialiseServices: initialise service "static-server" as NPM package
+2022-05-24T18:09:42.110Z DEBUG @wdio/local-runner:utils: init remote session
+2022-05-24T18:09:42.112Z INFO webdriver: Initiate new session using the WebDriver protocol
+2022-05-24T18:09:42.147Z INFO webdriver: [POST] http://localhost:9515/session
+2022-05-24T18:09:42.148Z INFO webdriver: DATA {
+  capabilities: {
+    alwaysMatch: { browserName: 'chrome', 'goog:chromeOptions': [Object] },
+    firstMatch: [ {} ]
+  },
+  desiredCapabilities: { browserName: 'chrome', 'goog:chromeOptions': { args: [Array] } }
+}
+2022-05-24T18:09:43.014Z INFO webdriver: COMMAND navigateTo("http://localhost:8080/")
+2022-05-24T18:09:43.015Z INFO webdriver: [POST] http://localhost:9515/session/ba48a9329706a68e2126eead4af6a4c2/url
+2022-05-24T18:09:43.015Z INFO webdriver: DATA { url: 'http://localhost:8080/' }
+2022-05-24T18:09:43.849Z INFO webdriver: COMMAND getTitle()
+2022-05-24T18:09:43.850Z INFO webdriver: [GET] http://localhost:9515/session/ba48a9329706a68e2126eead4af6a4c2/title
+2022-05-24T18:09:43.858Z INFO webdriver: RESULT Calculator
+2022-05-24T18:09:43.858Z DEBUG @wdio/utils:shim: Finished to run "beforeFeature" hook in 845ms
+2022-05-24T18:09:43.885Z INFO webdriver: COMMAND navigateTo("http://localhost:8080/")
+2022-05-24T18:09:43.885Z INFO webdriver: [POST] http://localhost:9515/session/ba48a9329706a68e2126eead4af6a4c2/url
+2022-05-24T18:09:43.885Z INFO webdriver: DATA { url: 'http://localhost:8080/' }
+2022-05-24T18:09:43.914Z INFO webdriver: COMMAND getTitle()
+2022-05-24T18:09:43.914Z INFO webdriver: [GET] http://localhost:9515/session/ba48a9329706a68e2126eead4af6a4c2/title
+2022-05-24T18:09:43.920Z INFO webdriver: RESULT Calculator
+2022-05-24T18:09:43.925Z INFO webdriver: COMMAND getLogTypes()
+2022-05-24T18:09:43.925Z INFO webdriver: [GET] http://localhost:9515/session/ba48a9329706a68e2126eead4af6a4c2/se/log/types
+2022-05-24T18:09:43.928Z INFO webdriver: RESULT [ 'browser', 'driver' ]
+2022-05-24T18:09:43.928Z DEBUG @wdio/runner: Fetching logs for browser, driver
+2022-05-24T18:09:43.928Z INFO webdriver: COMMAND getLogs("driver")
+2022-05-24T18:09:43.928Z INFO webdriver: [POST] http://localhost:9515/session/ba48a9329706a68e2126eead4af6a4c2/se/log
+2022-05-24T18:09:43.928Z INFO webdriver: DATA { type: 'driver' }
+2022-05-24T18:09:43.929Z INFO webdriver: COMMAND getLogs("browser")
+2022-05-24T18:09:43.929Z INFO webdriver: [POST] http://localhost:9515/session/ba48a9329706a68e2126eead4af6a4c2/se/log
+2022-05-24T18:09:43.929Z INFO webdriver: DATA { type: 'browser' }
+2022-05-24T18:09:43.933Z INFO webdriver: RESULT [
+  {
+    level: 'WARNING',
+    message: 'This version of ChromeDriver has not been tested with Chrome version 101.\n',
+    timestamp: 1653415782379
+  }
+]
+2022-05-24T18:09:43.934Z INFO webdriver: RESULT []
+2022-05-24T18:09:43.935Z INFO webdriver: COMMAND deleteSession()
+2022-05-24T18:09:43.935Z INFO webdriver: [DELETE] http://localhost:9515/session/ba48a9329706a68e2126eead4af6a4c2

@@ -1,0 +1,6 @@
+GET / 200 2071 - 5.635 ms
+GET /styles.css 200 3422 - 2.274 ms
+GET /script.js 200 6478 - 1.541 ms
+GET / 304 - - 1.726 ms
+GET /styles.css 304 - - 0.985 ms
+GET /script.js 304 - - 0.975 ms
