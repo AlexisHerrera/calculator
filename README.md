@@ -1,5 +1,5 @@
 # calculator
-App: https://abherrera.gitlab.io/calculator
+App: https://alexisherrera.github.io/calculator
 
 Lesson: https://www.theodinproject.com/lessons/foundations-calculator
 
