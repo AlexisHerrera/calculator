@@ -31,6 +31,7 @@ import isVisible from '../support/check/isDisplayed';
 import waitFor from '../support/action/waitFor';
 import waitForVisible from '../support/action/waitForDisplayed';
 import checkIfElementExists from '../support/lib/checkIfElementExists';
+import checkDisplayContains from "../support/check/checkDisplayContains";
 
 Then(
     /^I expect that the title is( not)* "([^"]*)?"$/,
@@ -191,3 +192,9 @@ Then(
     /^I expect that a (alertbox|confirmbox|prompt)( not)* contains the text "([^"]*)?"$/,
     checkModalText
 );
+/* Custom step*/
+Then(
+    /^it should( not)* display "([^"]*)?"$/,
+    checkDisplayContains
+);
+

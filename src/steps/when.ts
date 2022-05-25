@@ -96,3 +96,9 @@ When(
     /^I move to element "([^"]*)?"(?: with an offset of (\d+),(\d+))*$/,
     moveTo
 );
+
+/* Custom steps*/
+When(
+    /^enter value "([^"]*)?"$/,
+    pressButton
+);
